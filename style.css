@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 34px;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #cbd5f5;
+}
+
+.nav-links a:hover {
+  color: #22d3ee;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #22d3ee;
+}
+
+/* SECTIONS */
+.section {
+  padding: 110px 8%;
+  text-align: center;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.home-about {
+  max-width: 750px;
+  margin: 25px auto;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #22d3ee;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* BUTTONS */
+.btn {
+  background: #22d3ee;
+  color: #020617;
+  padding: 12px 26px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+}
+
+.btn.outline {
+  background: transparent;
+  color: #22d3ee;
+  border: 2px solid #22d3ee;
+}
+
+.btn.small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* RESUME */
+.timeline {
+  display: grid;
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.step {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.center {
+  margin-top: 40px;
+}
+
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.06);
+  padding: 25px;
+  border-radius: 18px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* CONTACT */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  padding: 25px;
+  text-align: center;
+  background: rgba(2,6,23,0.9);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    background: rgba(2,6,23,0.95);
+    padding: 20px;
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .home-actions {
+    flex-direction: column;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-icons a {
+  color: #cbd5f5;
+  font-size: 1.4rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #22d3ee;
+  transform: translateY(-4px);
+}
+/* RESUME SECTION */
+.resume-section {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.section-subtitle {
+  max-width: 650px;
+  margin: 10px auto 50px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.resume-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  gap: 40px;
+}
+
+.resume-block h3 {
+  color: #22d3ee;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.resume-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.resume-item .year {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #38bdf8;
+  margin-bottom: 8px;
+}
+
+.resume-item h4 {
+  margin-bottom: 10px;
+}
+
+.resume-item p {
+  line-height: 1.6;
+  color: #cbd5f5;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.skills-grid span {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 12px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* DOWNLOAD BUTTON */
+.resume-download {
+  margin-top: 50px;
+  text-align: center;
+}
